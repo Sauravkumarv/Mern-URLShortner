@@ -11,7 +11,7 @@ const URLShortener = () => {
   const [analytics, setAnalytics] = useState(null);
   const [showAnalytics, setShowAnalytics] = useState(false);
 
-  const API_BASE = process.env.REACT_APP_API_URL;;
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetchAllUrls();
