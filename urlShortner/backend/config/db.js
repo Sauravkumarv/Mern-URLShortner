@@ -1,16 +1,17 @@
-const mongoose=require('mongoose')
-const dotenv=require('dotenv')
+  const mongoose=require('mongoose')
+  const dotenv=require('dotenv')
 
-dotenv.config();
+  dotenv.config();
 
-const dbConnect=async()=>{
-  try{
-await mongoose.connect(process.env.MONGO_URL);
-console.log("MongoDb Connected")
-  }catch(err){
-req.status(500).json({message:err})
+  const dbConnect=async()=>{
+    try{
+  await mongoose.connect(process.env.MONGO_URL);
+  console.log("MongoDb Connected")
+    }catch(err){
+      console.error('MongoDB connection failed:', err);
+      process.exit(1); // Server ko band kar do, taki error kaam na kare
+    }
+
   }
 
-}
-
-module.exports=dbConnect;
+  module.exports=dbConnect;

@@ -11,7 +11,7 @@ const URLShortener = () => {
   const [analytics, setAnalytics] = useState(null);
   const [showAnalytics, setShowAnalytics] = useState(false);
 
-  const API_BASE = 'http://localhost:4005/api';
+  const API_BASE = 'https://mern-urlshortner-1.onrender.com/api';
 
   useEffect(() => {
     fetchAllUrls();
@@ -74,7 +74,7 @@ const URLShortener = () => {
 
   const fetchAnalytics = async (shortId) => {
     try {
-      const response = await fetch(`${API_BASE}/api/analytics/${shortId}`);
+      const response = await fetch(`${API_BASE}/analytics/${shortId}`);
       const data = await response.json();
       
       if (response.ok) {
